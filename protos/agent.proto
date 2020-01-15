@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+message Agent {
+    // The agent's unique public key
+    string public_key = 1;
+
+    // A human-readable name identifying the agent
+    string name = 2;
+
+    // Approximately when the agent was registered, as a Unix UTC timestamp
+    uint64 timestamp = 3;
+}
+
+
+message AgentContainer {
+    repeated Agent entries = 1;
+}
