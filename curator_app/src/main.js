@@ -11,11 +11,11 @@ const navigation = require('./components/navigation')
 
 const AgentList = require('./views/agent_list')
 const AgentDetailPage = require('./views/agent_detail')
-const RegisterArtworkForm = require('./views/register_artwork_form')
+const RegisterProductForm = require('./views/register_product_form')
 const Dashboard = require('./views/dashboard')
 const LoginForm = require('./views/login_form')
-const ArtworkList = require('./views/artwork_list')
-const ArtworkDetailPage = require('./views/artwork_detail')
+const ProductList = require('./views/product_list')
+const ProductDetailPage = require('./views/product_detail')
 const SignupForm = require('./views/signup_form')
 
 /**
@@ -32,8 +32,8 @@ const Layout = {
 
 const loggedInNav = () => {
   const links = [
-    ['/register', 'Register Artwork'],
-    ['/artworks', 'View Artwork Registry'],
+    ['/register', 'Register Product'],
+    ['/products', 'View Product Registry'],
     ['/agents', 'View Agents']
   ]
   return m(navigation.Navbar, {}, [
@@ -45,7 +45,7 @@ const loggedInNav = () => {
 
 const loggedOutNav = () => {
   const links = [
-    ['/artworks', 'View Artwork Registry'],
+    ['/products', 'View Product Registry'],
     ['/agents', 'View Agents']
   ]
   return m(navigation.Navbar, {}, [
@@ -102,12 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '/': resolve(Dashboard),
     '/agents': resolve(AgentList),
     '/agents/:publicKey': resolve(AgentDetailPage),
-    '/register': resolve(RegisterArtworkForm, true),
+    '/register': resolve(RegisterProductForm, true),
     '/login': resolve(LoginForm),
     '/logout': { onmatch: logout },
     '/profile': { onmatch: profile},
-    '/artworks': resolve(ArtworkList),
-    '/artworks/:recordId': resolve(ArtworkDetailPage),
+    '/products': resolve(ProductList),
+    '/products/:recordId': resolve(ProductDetailPage),
     '/signup': resolve(SignupForm)
   })
 })
