@@ -22,7 +22,7 @@ const ArtworkList = {
           ],
           rows: vnode.state.records
             .map((record) => [
-              m(`a[href=/artworks/${record.record_id}]`,
+              m(`a[href=/products/${record.record_id}]`,
                 { oncreate: m.route.link },
                 record.record_id)
             ]),
