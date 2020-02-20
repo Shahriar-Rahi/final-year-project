@@ -18,16 +18,16 @@ const recordSubmitter = state => e => {
   record.longitude = parsing.toInt(record.longitude)
 
   api.post('records', record)
-    .then(() => m.route.set('/artworks'))
+    .then(() => m.route.set('/products'))
     .catch(api.alertError)
 }
 
-const RegisterArtworkForm = {
+const RegisterProductForm = {
   view (vnode) {
     const setter = forms.stateSetter(vnode.state)
     return m('.register-form', [
       m('form', { onsubmit: recordSubmitter(vnode.state) },
-      m('legend', 'Register Artwork'),
+      m('legend', 'Register Product'),
       forms.textInput(setter('record_id'), 'Record ID'),
       layout.row([
         forms.group('Latitude', forms.field(setter('latitude'), {
@@ -47,9 +47,9 @@ const RegisterArtworkForm = {
         m('.row.justify-content-end.align-items-end',
           m('col-2',
             m('button.btn.btn-primary',
-              'Register Artwork')))))
+              'Register Product')))))
     ])
   }
 }
 
-module.exports = RegisterArtworkForm
+module.exports = RegisterProductForm
