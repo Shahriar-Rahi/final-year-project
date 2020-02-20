@@ -10,7 +10,7 @@ const Navbar = {
     return m('nav.navbar.navbar-expand-sm.navbar-dark.bg-primary.mb-5', [
       m('a.navbar-brand[href="/"]', {
         oncreate: m.route.link
-      }, 'Curator'),
+      }, 'SCoB'),
       m('button.navbar-toggler', {
         type: 'button',
         'data-toggle': 'collapse',
